@@ -7,12 +7,14 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class ConstructorInjectedController {
 
-//    @Autowired - Constructor based autowiring is optional.
+
     private GreetingService greetingService;
 
     public String sayHello(){
         return greetingService.sayGreetings();
     }
+
+    //    @Autowired - Constructor based autowiring is optional.
     public ConstructorInjectedController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
